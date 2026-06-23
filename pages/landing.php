@@ -1,6 +1,7 @@
 <?php
 
 include './helpers/config.php';
+
 ?>
 
 <head>
@@ -67,10 +68,10 @@ include './helpers/config.php';
 <body>
   <div id="box">
     <div class="title">
-      <h1>Kessoku Band!</h1>
-      <p>Kessoku Band (結束バンド Kessoku Bando) is the main unit band of Bocchi the Rock! series...</p>
+      <h1>Welcome to My Anime List!!</h1>
+      <p>This page is made by me for my final project web programming</p>
       <div class="button">
-        <a href="admin_page.php">Learn More</a>
+            <a href="/ta/login.php">Login"</a>
       </div>
     </div>
   </div>

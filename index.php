@@ -19,15 +19,14 @@
 
     <!-- Sidebar -->
     <?php
-        $page = $_REQUEST['page'] ?? 'pages/landing';
-        $file = str_replace(".", "/", $page) . ".php";
-        if ($page !=='pages.landing') {
-            include './inc/sidebar.php';
-        }
+    $page = $_REQUEST['page'] ?? 'pages.landing';
+    $file = str_replace(".", "/", $page) . ".php";
+    if ($page !== 'pages.landing') include './inc/sidebar.php';
     ?>
 
+
     <!-- Konten utama -->
-    <main class="<?= $page !== 'pages.landing' ? 'ml-64' : '' ?> pt-20 px-6 bg-white min-h-screen">
+    <main class="ml-64 pt-20 px-6 bg-white min-h-screen">
         <?php
         if (file_exists($file)) {
             include $file;
