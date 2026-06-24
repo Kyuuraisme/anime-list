@@ -1,6 +1,6 @@
 <?php
 $data = [
-    ["name" => "landing page", "url" => "?page=pages.landing"]
+    ["name" => "log out", "url" => "/ta/login.php"]
 ];
 ?>
 
