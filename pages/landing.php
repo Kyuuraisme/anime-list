@@ -11,16 +11,16 @@ include './helpers/config.php';
   <style>
     body {
       background-color: black;
-      min-height: 100vh; /* biar full tinggi layar */
+      min-height: 100vh; 
       display: flex;
       justify-content: center;
-      align-items: center; /* konten di tengah vertikal */
+      align-items: center; 
     }
     #box {
       background-color: whitesmoke;
       border-radius: 30px;
-      max-width: 1200px; /* lebih fleksibel */
-      width: 90%;        /* responsif */
+      max-width: 1200px; 
+      width: 90%;       
       padding: 40px;
     }
     .header {
