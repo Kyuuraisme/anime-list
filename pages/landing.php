@@ -71,7 +71,7 @@ include './helpers/config.php';
       <h1>Welcome to My Anime List!!</h1>
       <p>This page is made by me for my final project web programming</p>
       <div class="button">
-            <a href="/ta/login.php">Login"</a>
+            <a href="/ta/login.php">Login</a>
       </div>
     </div>
   </div>
