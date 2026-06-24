@@ -8,17 +8,19 @@ class m_akun {
 
     // Fungsi login
     public function login($request) {
-        $nama_user = $request['nama_user'];
-        $password = $request['password'];
+    $nama_user = $request['nama_user'];
+    $password  = $request['password'];
 
-        // Query pakai parameter biar aman dari SQL injection
-        $query = "SELECT * FROM master.m_akun WHERE nama_user = $1 AND password = $2";
-        $result = pg_query_params($this->conn, $query, [$nama_user, $password]);
+    $query = "SELECT * FROM master.m_akun WHERE nama_user = $1";
+    $result = pg_query_params($this->conn, $query, [$nama_user]);
+    $row = pg_fetch_assoc($result);
 
-        // Ambil hasil
-        $row = pg_fetch_assoc($result);
-        return $row; // kalau null berarti login gagal
+    if ($row && password_verify($password, $row['password'])) {
+        return $row; // login berhasil
     }
+    return false; // login gagal
+}
+
 
     // Fungsi register
     public function addAkun($request) {
