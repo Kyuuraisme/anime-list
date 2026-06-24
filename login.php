@@ -9,12 +9,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['login'])) {
         $result = $akun->login($_POST);
         if ($result) {
-            header("Location: ../index.php?page=pages.list");
+            header("Location: ./index.php?page=pages.list");
             exit;
         } else {
             $error = "Login gagal! Username atau password salah.";
         }
     }
+
 
     if (isset($_POST['register'])) {
         $result = $akun->addAkun($_POST);
@@ -105,8 +106,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="POST" action="">
             <input type="text" name="nama_user" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
-            <div class="button" name="login"><a href="./index.php?page=pages.list">Login</a></div>
+            <button type="submit" name="login">Login</button>
         </form>
+
 
         <h2>Register</h2>
         <form method="POST" action="">
