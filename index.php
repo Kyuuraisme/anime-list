@@ -31,14 +31,10 @@
 </head>
 
 <body class="bg-gray-800">
-    <!-- Header -->
-    <header class="fixed top-0 left-0 w-full bg-gray-800 z-50">
-        <?php include './inc/header.php'; ?>
-    </header>
 
     <!-- Sidebar -->
     <?php
-    $page = $_REQUEST['page'] ?? 'pages.landing';
+    $page = $_REQUEST['page'] ?? 'pages.list';
     $file = str_replace(".", "/", $page) . ".php";
     if ($page !== 'pages.landing') include './inc/sidebar.php';
     ?>
