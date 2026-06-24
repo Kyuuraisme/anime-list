@@ -78,4 +78,19 @@ class m_list
         $query = "UPDATE master.m_list SET deleted_at=NOW() WHERE id=$id";
         return pg_query($this->conn, $query);
     }
+
+    // query top 3 
+    public function getTopAnime($limit = 3)
+{
+    $query = "SELECT j.judul_anime, j.genre_anime, a.nama_author, l.cover_image
+              FROM master.m_list l
+              JOIN master.m_judul j ON l.id_judul_anime = j.id
+              JOIN master.m_author a ON l.id_nama_author = a.id
+              WHERE j.deleted_at IS NULL AND a.deleted_at IS NULL
+              ORDER BY l.id ASC
+              LIMIT $1";
+    $result = pg_query_params($this->conn, $query, [$limit]);
+    return pg_fetch_all($result);
+}
+
 }
